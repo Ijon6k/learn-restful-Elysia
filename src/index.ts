@@ -5,17 +5,16 @@ import { Elysia } from "elysia";
 import Routes from "./routes";
 
 //initiate elysia
-const app = new Elysia();
+const app = new Elysia()
 
-//route home
-app.get("/", () => "Hello Elysia!");
+  //route home
+  .get("/", () => "Hello Elysia!")
 
-//add routes
-app.group("/api", (app) => app.use(Routes));
+  //add routes
+  .group("/api", (app) => app.use(Routes))
 
-//start server on port 3000
-app.listen(3000);
-
+  //start server on port 3000
+  .listen(3000);
 console.log(
   `🦊 Elysia is running at http://${app.server?.hostname}:${app.server?.port}`
 );
